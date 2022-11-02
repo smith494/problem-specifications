@@ -125,10 +125,24 @@ jobs:
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
 
-      - uses: DavidAnson/markdownlint-cli2-action@744f913a124058ee903768d3adb92a4847e5d132
+      - name: Lint markdown
+        uses: DavidAnson/markdownlint-cli2-action@744f913a124058ee903768d3adb92a4847e5d132
         with:
           globs: |
             **/*.md
+
+  check-links:
+    name: Check links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@d54f290cc1751b0d56150f8b9fc99276775ccf6e
+        with:
+          args: --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36" --no-progress **/*.md **/*.html
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   json-lint:
     name: Lint json files
