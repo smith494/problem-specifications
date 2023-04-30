@@ -23,7 +23,7 @@
       "cases": [
         {
           "uuid": "1e9ae1dc-35bd-43ba-aa08-e4b94c20fa37",
-          "description": "ability modifier for score 3 is -4",
+          "description": "ability modifier for score 3 is -3",
           "property": "modifier",
           "input": {
             "score": 3
@@ -41,7 +41,7 @@
         },
         {
           "uuid": "5b519fcd-6946-41ee-91fe-34b4f9808326",
-          "description": "ability modifier for score 5 is -3",
+          "description": "ability modifier for score 5 is -2",
           "property": "modifier",
           "input": {
             "score": 5
